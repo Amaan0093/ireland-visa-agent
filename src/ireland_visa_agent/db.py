@@ -18,6 +18,11 @@ CREATE TABLE IF NOT EXISTS chunks (
 
 CREATE INDEX IF NOT EXISTS chunks_embedding_idx
     ON chunks USING hnsw (embedding vector_cosine_ops);
+
+ALTER TABLE chunks ADD COLUMN IF NOT EXISTS tsv tsvector
+    GENERATED ALWAYS AS (to_tsvector('english', coalesce(title, '') || ' ' || content)) STORED;
+
+CREATE INDEX IF NOT EXISTS chunks_tsv_idx ON chunks USING gin (tsv);
 """
 
 def init_db() -> None:

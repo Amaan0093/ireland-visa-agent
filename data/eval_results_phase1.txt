@@ -1,0 +1,25 @@
+vector=2  hybrid=3     When do I need to apply for Stamp 1G
+vector=3  hybrid=-     I just finished my masters can I stay in Ireland and look for a job
+vector=1  hybrid=1     How long is the graduate permission for a level 9 masters degree
+vector=1  hybrid=1     What does Stamp 1G allow me to do
+vector=1  hybrid=1     What is Stamp 0
+vector=1  hybrid=1     Can I work full time during the summer holidays on Stamp 2
+vector=1  hybrid=1     How many hours can a student work per week during term time
+vector=1  hybrid=1     What documents do I need to bring to my first registration appointment
+vector=3  hybrid=1     Do I need proof of address to register my immigration permission
+vector=1  hybrid=1     How do I renew my IRP card
+vector=2  hybrid=2     Can I renew my permission online while I am outside Ireland
+vector=1  hybrid=1     How long can I be out of the country in a year and keep my registration
+vector=1  hybrid=1     How much does the Critical Skills Employment Permit cost
+vector=1  hybrid=1     What is the minimum salary for a critical skills permit if I graduated recently
+vector=1  hybrid=1     How long do I have to stay with my first employer on a critical skills permit
+vector=1  hybrid=1     What happens if I am made redundant while on a critical skills permit
+vector=1  hybrid=1     When can I move from Stamp 1 to Stamp 4 with a critical skills permit
+vector=1  hybrid=1     Can my spouse work in Ireland if I hold a critical skills permit
+vector=1  hybrid=1     How soon after arriving in Ireland do I have to register my permission
+vector=1  hybrid=1     I lost my job through redundancy on a critical skills permit how long do I have to find another one
+vector=1  hybrid=1     My employment permit was refused how long do I have to ask for a review
+vector=-  hybrid=5     What happens if I do not send the extra documents they ask for during my renewal
+
+vector  hit@5 = 21/22   MRR = 0.85
+hybrid  hit@5 = 21/22   MRR = 0.87
