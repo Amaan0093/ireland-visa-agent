@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 
 from ireland_visa_agent.main import app
-from ireland_visa_agent.rag import build_context, extract_citations, NOT_FOUND, uncited_sentences
+from ireland_visa_agent.rag import build_context, extract_citations, NOT_FOUND, uncited_sentences, is_abstention
 
 def test_citations_outside_range_are_dropped():
     assert extract_citations("A [1]. B [2][9]. C [1].", n_sources=5) == [1, 2]
@@ -28,8 +28,6 @@ def test_citation_after_full_stop_counts():
 def test_not_found_is_never_flagged():
     assert uncited_sentences(NOT_FOUND) == []
 
-from ireland_visa_agent.rag import is_abstention
-
 def test_paraphrased_refusal_is_detected():
     assert is_abstention("I couldn't find this information in the official sources I have.", [])
 
@@ -38,3 +36,8 @@ def test_refusal_mentioning_the_topic_is_detected():
 
 def test_cited_answer_mentioning_cannot_find_is_not_a_refusal():
     assert not is_abstention("If you cannot find your IRP card, include an explanation why [2].", [2])
+
+def test_comma_separated_citations():
+    text = "You must register within 90 days [1, 2, 4]. Book an appointment on arrival [2, 4]."
+    assert extract_citations(text, n_sources=5) == [1, 2, 4]
+    assert uncited_sentences(text) == []
