@@ -12,4 +12,7 @@ class Settings(BaseSettings):
     embed_model: str = "nomic-embed-text"
     embed_dim: int = 768
 
+    chat_model: str = "llama3.1:8b"
+    retrieval_k: int = 5
+
 settings = Settings()
