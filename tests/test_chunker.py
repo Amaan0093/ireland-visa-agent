@@ -1,4 +1,17 @@
-from ireland_visa_agent.ingest import chunk_text, clean_html
+from ireland_visa_agent.ingest import chunk_text, clean_html, build_chunks, split_sections
+
+def test_sections_track_heading_hierarchy():
+    text = "§1 Page\nintro\n§2 Documents\n§4 Stamp 0\nzero docs\n§4 Stamp 1A\naccountant docs\n§2 Fees\nfee text"
+    assert split_sections(text) == [
+        ("", "intro"),
+        ("Documents > Stamp 0", "zero docs"),
+        ("Documents > Stamp 1A", "accountant docs"),
+        ("Fees", "fee text"),
+    ]
+
+def test_chunks_start_with_their_section():
+    chunks = build_chunks("§2 Documents\n§4 Stamp 1A\naccountant docs")
+    assert chunks == ["Section: Documents > Stamp 1A\naccountant docs"]
 
 def test_short_text_is_one_chunk():
     assert chunk_text("a\nb\nc") == ["a\nb\nc"]

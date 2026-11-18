@@ -1,7 +1,7 @@
 import csv
 import json
 
-from ireland_visa_agent.rag import NOT_FOUND, answer_question
+from ireland_visa_agent.rag import NOT_FOUND, PROMPT_VERSION, answer_question
 
 def contains_fact(text: str, must_include: str) -> bool:
     if not must_include:
@@ -15,7 +15,7 @@ with open("data/eval_answers.csv", newline="", encoding="utf-8") as f:
 s = {"pass": 0, "answerable": 0, "unanswerable": 0, "false_abstain": 0,
      "answered_unanswerable": 0, "fully_cited": 0, "right_page": 0}
 
-with open("data/eval_answers_results.jsonl", "w", encoding="utf-8") as out:
+with open(f"data/eval_answers_{PROMPT_VERSION}.jsonl", "w", encoding="utf-8") as out:
     for case in cases:
         result = answer_question(case["question"])
         abstained = result.abstained
@@ -34,10 +34,16 @@ with open("data/eval_answers_results.jsonl", "w", encoding="utf-8") as out:
 
         s["pass"] += passed
         print(f"{'PASS' if passed else 'FAIL'}  {case['type'][:6]:6}  {case['question']}")
-        out.write(json.dumps({"case": case, "passed": passed, "result": result.model_dump()}) + "\n")
+        out.write(json.dumps({
+            "prompt_version": PROMPT_VERSION,
+            "case": case,
+            "passed": passed,
+            "result": result.model_dump(),
+        }) + "\n")
 
 a, u = s["answerable"], s["unanswerable"]
 print(f"""
+Prompt version:            {PROMPT_VERSION}
 Overall pass:              {s['pass']}/{len(cases)}
 Wrongly said "don't know": {s['false_abstain']}/{a}
 Answered the unanswerable: {s['answered_unanswerable']}/{u}   <- the most dangerous number

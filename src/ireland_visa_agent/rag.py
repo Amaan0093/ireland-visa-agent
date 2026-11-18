@@ -8,6 +8,8 @@ from ireland_visa_agent.search import vector_search
 
 NOT_FOUND = "I couldn't find this in the official sources I have."
 
+PROMPT_VERSION = "v2.1"   # bump this every time you change SYSTEM_PROMPT
+
 SYSTEM_PROMPT = f"""You answer questions about Irish immigration rules for international students and graduates.
 
 Rules:
