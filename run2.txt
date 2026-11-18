@@ -1,0 +1,35 @@
+PASS  answer  When do I need to apply for Stamp 1G
+PASS  answer  I just finished my masters can I stay in Ireland and look for a job
+PASS  answer  How long is the graduate permission for a level 9 masters degree
+PASS  answer  What does Stamp 1G allow me to do
+PASS  answer  What is Stamp 0
+PASS  answer  Can I work full time during the summer holidays on Stamp 2
+PASS  answer  How many hours can a student work per week during term time
+PASS  answer  What documents do I need to bring to my first registration appointment
+PASS  answer  Do I need proof of address to register my immigration permission
+PASS  answer  How do I renew my IRP card
+PASS  answer  Can I renew my permission online while I am outside Ireland
+PASS  answer  How long can I be out of the country in a year and keep my registration
+PASS  answer  How much does the Critical Skills Employment Permit cost
+PASS  answer  What is the minimum salary for a critical skills permit if I graduated recently
+PASS  answer  How long do I have to stay with my first employer on a critical skills permit
+PASS  answer  What happens if I am made redundant while on a critical skills permit
+PASS  answer  When can I move from Stamp 1 to Stamp 4 with a critical skills permit
+PASS  answer  Can my spouse work in Ireland if I hold a critical skills permit
+PASS  answer  How soon after arriving in Ireland do I have to register my permission
+PASS  answer  I lost my job through redundancy on a critical skills permit how long do I have to find another one
+PASS  answer  My employment permit was refused how long do I have to ask for a review
+PASS  answer  What happens if I do not send the extra documents they ask for during my renewal
+PASS  unansw  How much does a Leap card cost
+PASS  unansw  What is the national minimum wage per hour in Ireland
+PASS  unansw  How much does a General Employment Permit cost
+PASS  answer  Can I visit France for a holiday with my Irish IRP card
+PASS  unansw  What is the income tax rate in Ireland
+PASS  unansw  What is the best area to rent an apartment in Dublin
+
+Prompt version:            v2.2-d59aad79
+Overall pass:              28/28
+Wrongly said "don't know": 0/23
+Answered the unanswerable: 0/5   <- the most dangerous number
+Answers fully cited:       21/23
+Cited the right page:      23/23
