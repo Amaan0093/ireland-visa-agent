@@ -1,29 +1,29 @@
-question,type,expected,must_include
-When do I need to apply for Stamp 1G,answerable,third-level-graduate|frequently-asked-questions-for-registration,six months|6 months
-I just finished my masters can I stay in Ireland and look for a job,answerable,third-level-graduate|immigration-permission-stamps|frequently-asked-questions-for-registration,graduate programme|stamp 1g
-How long is the graduate permission for a level 9 masters degree,answerable,third-level-graduate,12 months|twelve months|24 months
-What does Stamp 1G allow me to do,answerable,immigration-permission-stamps|third-level-graduate,employment|work
-What is Stamp 0,answerable,immigration-permission-stamps|required-documents,
-Can I work full time during the summer holidays on Stamp 2,answerable,planning-to-study|immigration-permission-stamps,40 hours
-How many hours can a student work per week during term time,answerable,planning-to-study|immigration-permission-stamps,20 hours
-What documents do I need to bring to my first registration appointment,answerable,required-documents,passport
-Do I need proof of address to register my immigration permission,answerable,required-documents,proof of address
-How do I renew my IRP card,answerable,renewing-your-registration-permission|frequently-asked-questions-for-registration,online
-Can I renew my permission online while I am outside Ireland,answerable,renewing-your-registration-permission|frequently-asked-questions-for-registration,present in ireland|outside ireland|in ireland to
-How long can I be out of the country in a year and keep my registration,answerable,frequently-asked-questions-for-registration,90 days
-How much does the Critical Skills Employment Permit cost,answerable,critical-skills-employment-permit,"1,000|1000"
-What is the minimum salary for a critical skills permit if I graduated recently,answerable,critical-skills-employment-permit,"36,848|36848"
-How long do I have to stay with my first employer on a critical skills permit,answerable,critical-skills-employment-permit,9 months|nine months
-What happens if I am made redundant while on a critical skills permit,answerable,critical-skills-employment-permit,6 months|six months
-When can I move from Stamp 1 to Stamp 4 with a critical skills permit,answerable,stamp-4-upgrades|critical-skills-employment-permit|required-documents,21 months
-Can my spouse work in Ireland if I hold a critical skills permit,answerable,critical-skills-employment-permit|immigration-permission-stamps,employ|work
-How soon after arriving in Ireland do I have to register my permission,answerable,frequently-asked-questions-for-registration|immigration-permission-stamps|required-documents,90 days
-I lost my job through redundancy on a critical skills permit how long do I have to find another one,answerable,critical-skills-employment-permit,6 months|six months
-My employment permit was refused how long do I have to ask for a review,answerable,critical-skills-employment-permit,28 days
-What happens if I do not send the extra documents they ask for during my renewal,answerable,renewing-your-registration-permission|frequently-asked-questions-for-registration,14 days|refused
-How much does a Leap card cost,unanswerable,,
-What is the national minimum wage per hour in Ireland,unanswerable,,
-How much does a General Employment Permit cost,unanswerable,,
-Can I visit France for a holiday with my Irish IRP card,answerable,frequently-asked-questions-for-registration,does not|not allow
-What is the income tax rate in Ireland,unanswerable,,
-What is the best area to rent an apartment in Dublin,unanswerable,,
+question,type,expected,must_include,reference
+When do I need to apply for Stamp 1G,answerable,third-level-graduate|frequently-asked-questions-for-registration,six months|6 months,Within six months of being notified by the awarding body or institution that you have achieved your award. Provisional results are not sufficient.
+I just finished my masters can I stay in Ireland and look for a job,answerable,third-level-graduate|immigration-permission-stamps|frequently-asked-questions-for-registration,graduate programme|stamp 1g,"Yes, if eligible, under the Third Level Graduate Programme (Stamp 1G), which lets graduates stay after their studies to look for graduate-level employment, subject to conditions such as applying within six months of being notified of the award."
+How long is the graduate permission for a level 9 masters degree,answerable,third-level-graduate,12 months|twelve months|24 months,"12 months initially, renewable for a further 12 months (24 months in total) if you show you have taken steps to find graduate-level employment, subject to the overall eight-year limit."
+What does Stamp 1G allow me to do,answerable,immigration-permission-stamps|third-level-graduate,employment|work,Look for employment under the Third Level Graduate Programme. You may work full time but may not operate a business or be self-employed.
+What is Stamp 0,answerable,immigration-permission-stamps|required-documents,,"Permission to stay in Ireland for a temporary period, subject to conditions such as being financially self-sufficient (or fully supported by a sponsor), no access to benefits or publicly funded services, and having private medical insurance."
+Can I work full time during the summer holidays on Stamp 2,answerable,planning-to-study|immigration-permission-stamps,40 hours,You may work up to 40 hours per week during holiday periods (June to September and 15 December to 15 January). During term the limit is 20 hours per week.
+How many hours can a student work per week during term time,answerable,planning-to-study|immigration-permission-stamps,20 hours,Up to 20 hours per week during term (40 hours per week during the holiday periods).
+What documents do I need to bring to my first registration appointment,answerable,required-documents,passport,"It depends on your stamp. All applicants need certain documents (e.g. passport, proof of address, the relevant visa/landing stamp, medical insurance where required) plus documents specific to their stamp category. A good answer explains this or asks which stamp the person has."
+Do I need proof of address to register my immigration permission,answerable,required-documents,proof of address,Yes. Proof of address is one of the requirements for all registrations and renewals.
+How do I renew my IRP card,answerable,renewing-your-registration-permission|frequently-asked-questions-for-registration,online,"Apply online through the ISD online renewals portal, from up to 12 weeks before your IRP expires. You must be in Ireland when you apply."
+Can I renew my permission online while I am outside Ireland,answerable,renewing-your-registration-permission|frequently-asked-questions-for-registration,present in ireland|outside ireland|in ireland to,No. You must be present in Ireland to renew online; applications submitted from outside Ireland will be rejected.
+How long can I be out of the country in a year and keep my registration,answerable,frequently-asked-questions-for-registration,90 days,Absence from the State should not exceed 90 days in a rolling year.
+How much does the Critical Skills Employment Permit cost,answerable,critical-skills-employment-permit,"1,000|1000","The processing fee is EUR 1,000. If the application is unsuccessful, 90% is refunded."
+What is the minimum salary for a critical skills permit if I graduated recently,answerable,critical-skills-employment-permit,"36,848|36848","EUR 36,848 if you received your qualification within the 12 months before applying (otherwise EUR 40,904 for listed occupations)."
+How long do I have to stay with my first employer on a critical skills permit,answerable,critical-skills-employment-permit,9 months|nine months,"At least 9 months, except in specific circumstances such as redundancy."
+What happens if I am made redundant while on a critical skills permit,answerable,critical-skills-employment-permit,6 months|six months,"Notify the Employment Permits Section within 4 weeks of dismissal. You then have up to 6 months from the date of dismissal to find alternative employment; if not, contact the immigration authorities about your status."
+When can I move from Stamp 1 to Stamp 4 with a critical skills permit,answerable,stamp-4-upgrades|critical-skills-employment-permit|required-documents,21 months,After completing 21 months of employment on a Critical Skills Employment Permit. Holders apply directly to the Department of Justice for Stamp 4 (no renewal permit or support letter needed).
+Can my spouse work in Ireland if I hold a critical skills permit,answerable,critical-skills-employment-permit|immigration-permission-stamps,employ|work,"Yes. Once resident, a spouse/partner of a Critical Skills Employment Permit holder can seek employment (e.g. on Stamp 1G without an employment permit, or via a free Dependant/Partner/Spouse Employment Permit)."
+How soon after arriving in Ireland do I have to register my permission,answerable,frequently-asked-questions-for-registration|immigration-permission-stamps|required-documents,90 days,"Within 90 days of arrival, as instructed by the landing stamp in your passport."
+I lost my job through redundancy on a critical skills permit how long do I have to find another one,answerable,critical-skills-employment-permit,6 months|six months,Up to 6 months from the date of dismissal.
+My employment permit was refused how long do I have to ask for a review,answerable,critical-skills-employment-permit,28 days,"Within 28 days, using the Submission of a Decision for Review form."
+What happens if I do not send the extra documents they ask for during my renewal,answerable,renewing-your-registration-permission|frequently-asked-questions-for-registration,14 days|refused,"If you do not provide the requested documents within 14 days, your application is refused/closed and you must submit a new application."
+How much does a Leap card cost,unanswerable,,,Not covered by the sources. The correct behaviour is to say it could not find this.
+What is the national minimum wage per hour in Ireland,unanswerable,,,Not covered by the sources. The correct behaviour is to say it could not find this.
+How much does a General Employment Permit cost,unanswerable,,,Not covered by the sources. The correct behaviour is to say it could not find this.
+Can I visit France for a holiday with my Irish IRP card,answerable,frequently-asked-questions-for-registration,does not|not allow,An IRP card does not by itself allow travel to other EU countries; you must check France's entry requirements before travelling.
+What is the income tax rate in Ireland,unanswerable,,,Not covered by the sources. The correct behaviour is to say it could not find this.
+What is the best area to rent an apartment in Dublin,unanswerable,,,Not covered by the sources. The correct behaviour is to say it could not find this.

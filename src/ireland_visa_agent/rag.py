@@ -31,6 +31,7 @@ class Source(BaseModel):
     number: int
     title: str
     url: str
+    content: str
 
 class Answer(BaseModel):
     question: str
@@ -69,12 +70,20 @@ def answer_question(question: str) -> Answer:
     chunks = vector_search(question, k=settings.retrieval_k)
     user_message = f"<sources>\n{build_context(chunks)}\n</sources>\n\nQuestion: {question}"
     text = chat(SYSTEM_PROMPT, user_message).strip()
-    sources = [Source(number=i, title=c["title"], url=c["url"]) for i, c in enumerate(chunks, start=1)]
-
+    sources = [
+        Source(number=i, title=c["title"], url=c["url"], content=c["content"])
+        for i, c in enumerate(chunks, start=1)
+    ]
+    
     cited = extract_citations(text, len(chunks))
     abstained = is_abstention(text, cited)
     if abstained:
         text, cited = NOT_FOUND, []   # replace any paraphrase with the standard sentence
+    
+    sources = [
+        Source(number=i, title=c["title"], url=c["url"], content=c["content"])
+        for i, c in enumerate(chunks, start=1)
+    ]
 
     return Answer(
         question=question,
