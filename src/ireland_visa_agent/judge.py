@@ -78,9 +78,9 @@ JUDGE_VERSION = hashlib.sha256((CORRECTNESS_PROMPT + SENTENCES_PROMPT).encode())
 
 _client = ollama.Client(host=settings.ollama_host)
 
-def _ask(system: str, user: str, schema: type[BaseModel]) -> BaseModel:
+def _ask(system: str, user: str, schema: type[BaseModel], model: str) -> BaseModel:
     response = _client.chat(
-        model=settings.judge_model,
+        model=model,
         messages=[{"role": "system", "content": system}, {"role": "user", "content": user}],
         format=schema.model_json_schema(),
         options={"temperature": 0, "num_ctx": 8192},
@@ -92,8 +92,7 @@ def _ask(system: str, user: str, schema: type[BaseModel]) -> BaseModel:
 
 def judge_correctness(question: str, reference: str, answer: str) -> CorrectnessVerdict:
     user = f"QUESTION:\n{question}\n\nREFERENCE ANSWER:\n{reference}\n\nANSWER TO GRADE:\n{answer}"
-    return _ask(CORRECTNESS_PROMPT, user, CorrectnessVerdict)
-
+    return _ask(CORRECTNESS_PROMPT, user, CorrectnessVerdict, settings.correctness_judge_model)
 
 # ---------- Faithfulness ----------
 
@@ -122,8 +121,8 @@ def judge_faithfulness(question: str, answer: str, sources: list[dict]) -> Faith
     blocks = "\n\n".join(f"[{s['number']}] {s['title']}\n{s['content']}" for s in sources)
     numbered = "\n".join(f"{i}. {s}" for i, s in enumerate(sentences, start=1))
     user = f"QUESTION:\n{question}\n\nSOURCES:\n{blocks}\n\nSENTENCES TO CHECK:\n{numbered}"
-    result = _ask(SENTENCES_PROMPT, user, SentenceChecks)
-
+    result = _ask(SENTENCES_PROMPT, user, SentenceChecks, settings.faithfulness_judge_model)
+    
     by_id = {c.sentence_id: c for c in result.checks}
     problems, lines = [], []
     for i, sentence in enumerate(sentences, start=1):

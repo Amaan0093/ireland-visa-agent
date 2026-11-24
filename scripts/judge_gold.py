@@ -1,5 +1,6 @@
 import csv
 import json
+import time                                                  # <-- NEW
 from pathlib import Path
 
 from ireland_visa_agent.config import settings
@@ -21,7 +22,10 @@ def kappa(human: list[bool], judge: list[bool]) -> float:
     return 1.0 if p_chance == 1 else (p_observed - p_chance) / (1 - p_chance)
 
 scores = {"correct": ([], []), "faithful": ([], [])}
-out_path = GOLD / f"judge_{settings.judge_model.replace(':', '-')}_{JUDGE_VERSION}.jsonl"
+models = f"{settings.correctness_judge_model}+{settings.faithfulness_judge_model}".replace(":", "-")
+out_path = GOLD / f"judge_{models}_{JUDGE_VERSION}.jsonl"
+
+start = time.time()                                          # <-- NEW: start the clock just before the loop
 
 with open(out_path, "w", encoding="utf-8") as out:
     for row in labels:
@@ -41,10 +45,12 @@ with open(out_path, "w", encoding="utf-8") as out:
         out.write(json.dumps({"id": row["id"], "question": row["question"], "human": human, "judge": judged,
                               "correct_reasoning": c.reasoning, "faithful_reasoning": f_.reasoning}) + "\n")
 
-print(f"\nJudge: {settings.judge_model}  version {JUDGE_VERSION}")
+print(f"\nJudges: correct={settings.correctness_judge_model}  faithful={settings.faithfulness_judge_model}  version {JUDGE_VERSION}")
 for k, (h, j) in scores.items():
     agree = sum(a == b for a, b in zip(h, j))
     missed = sum((not a) and b for a, b in zip(h, j))
     false_alarm = sum(a and (not b) for a, b in zip(h, j))
     print(f"{k:9} agreement {agree}/{len(h)}   kappa {kappa(h, j):.2f}   "
           f"missed errors {missed}   false alarms {false_alarm}")
+
+print(f"\nTime: {(time.time() - start) / 60:.1f} minutes for {len(labels) * 2} judge calls")   # <-- NEW: very last line
