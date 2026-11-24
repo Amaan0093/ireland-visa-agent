@@ -14,5 +14,6 @@ class Settings(BaseSettings):
 
     chat_model: str = "llama3.1:8b"
     retrieval_k: int = 5
+    judge_model: str = "qwen2.5:7b"
 
 settings = Settings()
