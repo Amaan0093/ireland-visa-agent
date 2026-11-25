@@ -4,8 +4,10 @@ import sys
 from pathlib import Path
 
 results_path = Path(sys.argv[1])
+refs_path = Path(sys.argv[2]) if len(sys.argv) > 2 else Path("data/eval_answers.csv")
+out_dir = Path(sys.argv[3]) if len(sys.argv) > 3 else Path("data/labels")
 
-with open("data/eval_answers.csv", newline="", encoding="utf-8") as f:
+with open(refs_path, newline="", encoding="utf-8") as f:
     references = {row["question"]: row["reference"] for row in csv.DictReader(f)}
 
 records = [json.loads(line) for line in results_path.read_text(encoding="utf-8").splitlines() if line.strip()]

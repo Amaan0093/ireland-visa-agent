@@ -1,5 +1,7 @@
 import csv
 import json
+import sys
+from pathlib import Path
 
 from ireland_visa_agent.rag import NOT_FOUND, PROMPT_VERSION, answer_question
 
@@ -9,13 +11,15 @@ def contains_fact(text: str, must_include: str) -> bool:
     text = text.lower()
     return any(option.strip().lower() in text for option in must_include.split("|"))
 
-with open("data/eval_answers.csv", newline="", encoding="utf-8") as f:
+csv_path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("data/eval_answers.csv")
+
+with open(csv_path, newline="", encoding="utf-8") as f:
     cases = list(csv.DictReader(f))
 
 s = {"pass": 0, "answerable": 0, "unanswerable": 0, "false_abstain": 0,
      "answered_unanswerable": 0, "fully_cited": 0, "right_page": 0}
 
-with open(f"data/eval_answers_{PROMPT_VERSION}.jsonl", "w", encoding="utf-8") as out:
+with open(f"data/{csv_path.stem}_{PROMPT_VERSION}.jsonl", "w", encoding="utf-8") as out:
     for case in cases:
         result = answer_question(case["question"])
         abstained = result.abstained

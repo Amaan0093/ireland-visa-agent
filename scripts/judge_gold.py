@@ -1,12 +1,13 @@
 import csv
 import json
+import sys
 import time                                                  # <-- NEW
 from pathlib import Path
 
 from ireland_visa_agent.config import settings
 from ireland_visa_agent.judge import JUDGE_VERSION, judge_correctness, judge_faithfulness
 
-GOLD = Path("data/labels/gold")
+GOLD = Path(sys.argv[1]) if len(sys.argv) > 1 else Path("data/labels/gold")
 
 records = [json.loads(line) for line in (GOLD / "answers.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
 answers = {r["case"]["question"]: r for r in records if r["case"]["type"] == "answerable"}
