@@ -13,7 +13,6 @@ with open(refs_path, newline="", encoding="utf-8") as f:
 records = [json.loads(line) for line in results_path.read_text(encoding="utf-8").splitlines() if line.strip()]
 records = [r for r in records if r["case"]["type"] == "answerable"]
 
-out_dir = Path("data/labels")
 out_dir.mkdir(exist_ok=True)
 
 with open(out_dir / "label_sheet.csv", "w", newline="", encoding="utf-8-sig") as f:
